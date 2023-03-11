@@ -7,6 +7,9 @@ public class Collision : MonoBehaviour
     bool onecoll = false;
     bool twocoll = false;
     [SerializeField] GameObject Target;
+    [SerializeField] AudioClip SFX_Finish;
+    [SerializeField] AudioClip SFX_Crash;
+
 
     void Start() 
     {
@@ -17,10 +20,12 @@ public class Collision : MonoBehaviour
         if(onecoll == true && twocoll == true)
         {
             Debug.Log("주차성공");
+            GetComponent<AudioSource>().PlayOneShot(SFX_Finish);
             Target.SetActive(false);
             onecoll = false;
             twocoll = false;
             
+
         }
             
     }
@@ -28,6 +33,7 @@ public class Collision : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other) 
     {
         Debug.Log("으악");
+        GetComponent<AudioSource>().PlayOneShot(SFX_Crash);
     }
     void OnTriggerEnter2D(Collider2D other) 
     {
