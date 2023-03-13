@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
 
     }
 
-    void gameClear()
+    void gameOver()
     {
         
     }

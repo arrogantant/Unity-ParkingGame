@@ -37,7 +37,7 @@ public class Coll2 : MonoBehaviour
             Target2.SetActive(false);
             Destroy(Particle,2);
             ClearPal.SetActive(true);
-            EditorApplication.isPaused = true;
+            
 
     
         }
