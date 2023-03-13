@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
-public class Coll : MonoBehaviour
+public class Coll2 : MonoBehaviour
 {
     
     [SerializeField] GameObject Target;
@@ -12,13 +13,14 @@ public class Coll : MonoBehaviour
     [SerializeField] AudioClip SFX_Crash;
     [SerializeField] ParticleSystem Particle;
     [SerializeField] SpriteRenderer Spgr;
-    
+    [SerializeField] GameObject ClearPal;
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<Player>();
         GetComponent<FiniSh_Coll>();
         GetComponent<Finsh_Coll2>();
+        ClearPal.SetActive(false);
     }
 
     // Update is called once per frame
@@ -26,6 +28,7 @@ public class Coll : MonoBehaviour
     {
         if(GameObject.Find("Trigger1").GetComponent<FiniSh_Coll>().FiniShcollone == true && GameObject.Find("Trigger2").GetComponent<Finsh_Coll2>().FiniShcolltwo == true)
         {
+
             Debug.Log("주차성공");
             Spgr.color = Color.green;
             Particle.Play();
@@ -33,6 +36,9 @@ public class Coll : MonoBehaviour
             Target.SetActive(false);
             Target2.SetActive(false);
             Destroy(Particle,2);
+            ClearPal.SetActive(true);
+            EditorApplication.isPaused = true;
+
     
         }
 
@@ -40,3 +46,4 @@ public class Coll : MonoBehaviour
         
     }
 }
+

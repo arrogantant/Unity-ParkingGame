@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
     [SerializeField] float playerSpeed = 1f;
     [SerializeField] float moveSpeed = 20f;
 
+    public bool objOne = false;
+    public bool objTwo = false;
+
     
     // Start is called before the first frame update
     void Start()
@@ -22,6 +25,11 @@ public class Player : MonoBehaviour
         transform.Rotate(0,0, -steerAmount);
         transform.Translate(0, moveAmount, 0);
 
+    }
+
+    void gameClear()
+    {
+        
     }
 
 }
