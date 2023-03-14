@@ -14,6 +14,9 @@ public class Coll2 : MonoBehaviour
     [SerializeField] ParticleSystem Particle;
     [SerializeField] SpriteRenderer Spgr;
     [SerializeField] GameObject ClearPal;
+    [SerializeField] GameObject playerMove;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +40,7 @@ public class Coll2 : MonoBehaviour
             Target2.SetActive(false);
             Destroy(Particle,2);
             ClearPal.SetActive(true);
-            
+            playerMove.GetComponent<Player>().enabled = false;
 
     
         }

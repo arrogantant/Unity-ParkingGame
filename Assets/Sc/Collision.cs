@@ -10,6 +10,7 @@ public class Collision : MonoBehaviour
     [SerializeField] GameObject HP3;
     [SerializeField] GameObject HP2;
     [SerializeField] GameObject HP1;
+    [SerializeField] GameObject playerMove;
     public float maxHealth = 3;
 
     int health = 3;
@@ -27,16 +28,17 @@ public class Collision : MonoBehaviour
          if (health == 0)
          {
             if(!isDie)
-                Die();
+                gameOver();
                 
             return;
          }   
     }
 
-    void Die()
+    void gameOver()
     {
         isDie = true;
         gameOverPal.SetActive(true);
+        playerMove.GetComponent<Player>().enabled = false;
         
     }
 

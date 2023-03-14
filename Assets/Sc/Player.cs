@@ -4,20 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] float playerSpeed = 1f;
-    [SerializeField] float moveSpeed = 20f;
+    public float playerSpeed = 1f;
+    public float moveSpeed = 20f;
 
-    public bool objOne = false;
-    public bool objTwo = false;
 
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-      
-    }
-
-    // Update is called once per frame
     void Update()
     {   
         float steerAmount = Input.GetAxis("Horizontal") * playerSpeed * Time.deltaTime;
@@ -25,10 +15,6 @@ public class Player : MonoBehaviour
         transform.Rotate(0,0, -steerAmount);
         transform.Translate(0, moveAmount, 0);
 
-    }
-
-    void gameOver()
-    {
         
     }
 
