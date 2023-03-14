@@ -16,8 +16,6 @@ public class Coll2 : MonoBehaviour
     [SerializeField] GameObject ClearPal;
     [SerializeField] GameObject playerMove;
 
-    
-    // Start is called before the first frame update
     void Start()
     {
         GetComponent<Player>();
@@ -26,27 +24,19 @@ public class Coll2 : MonoBehaviour
         ClearPal.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(GameObject.Find("Trigger1").GetComponent<FiniSh_Coll>().FiniShcollone == true && GameObject.Find("Trigger2").GetComponent<Finsh_Coll2>().FiniShcolltwo == true)
-        {
-
-            Debug.Log("주차성공");
-            Spgr.color = Color.green;
-            Particle.Play();
-            GetComponent<AudioSource>().PlayOneShot(SFX_Finish);
-            Target.SetActive(false);
-            Target2.SetActive(false);
-            Destroy(Particle,2);
-            ClearPal.SetActive(true);
-            playerMove.GetComponent<Player>().enabled = false;
-
-    
-        }
-
-        
-        
+            {
+                Debug.Log("주차성공");
+                Spgr.color = Color.green;
+                Particle.Play();
+                GetComponent<AudioSource>().PlayOneShot(SFX_Finish);
+                Target.SetActive(false);
+                Target2.SetActive(false);
+                Destroy(Particle,2);
+                ClearPal.SetActive(true);
+                playerMove.GetComponent<Player>().enabled = false;
+            }     
     }
 }
-
