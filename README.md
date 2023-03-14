@@ -1,8 +1,13 @@
 # Unity-ParkingGame
-## 간단하게만든 주차게임
+자동차를 주차장에 알맞게 주차하는 간단한게임
 
-*주변 사물에 **부딪치지 않고** 주차를하는 방식
+## 스크린샷
 
->>유니티 제작
+![Animation](https://user-images.githubusercontent.com/109032080/225009360-93705cc6-5267-435e-b301-461c379ed28c.gif)
 
-![image](https://user-images.githubusercontent.com/109032080/224669271-6489f9ff-bf4e-4cb8-9796-6d1c53d7ba97.png)
+## 게임로직
+화살표키를 이용하여 자동차를 조종해 벽에 부딪치지 않고 주차를 완료하세요!
+
+## 사용도구 :
+* C#(로직)
+* Unity(게임 엔진)
